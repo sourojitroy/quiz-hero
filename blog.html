@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html data-theme="cupcake" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header class="h-16 flex items-center shadow-sm">
+        <nav class="flex justify-between items-center w-9/12 mx-auto">
+            <div class="text-zinc-800 font-bold uppercase">
+                <h1 class="text-lg">Quiz <span class="text-green-700">HERO</span></h1>
+                <p class="text-[10px] font-normal capitalize -mt-1">
+                    Get ready to Quiz and be amazed!
+                </p>
+            </div>
+            <a href="index.html" class="bg-green-600 font-light text-sm px-5 py-1 rounded text-white">
+                <button>
+                    Home
+                </button>
+            </a>
+        </nav>
+    </header>
+    <h1 class="text-center text-6xl font-semibold mb-16">Welcome to the Q&A Blog</h1>
+    <div tabindex="0" class="collapse group mb-8">
+        <div
+            class="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content text-3xl">
+            What is the difference between map, filter, for each, find?
+        </div>
+        <div
+            class="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
+            <p>Doing an action on each element of an existing array, the map() function creates a new array. The size of
+                the output array will match that of the initial array. Without changing the original array, it gives
+                back a new array. <br>
+                By removing entries from an existing array that don't match a given criteria, the filter() function may
+                be used to generate a new array. The length of the final array could differ from the initial array's
+                length. It doesn't change the initial array; instead, it returns a new array. <br>
+                When iterating across an array, the forEach() function is used to execute an operation on each element.
+                Instead of returning a new array, it makes changes to the initial array. <br>
+                Find the first member in an array that satisfies a specific requirement by using the find() function.
+                When finding no elements, it returns undefined or the first matched element.
+
+            </p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="collapse group mb-8">
+        <div
+            class="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content text-3xl">
+            What is the difference between local storage, session storage, cookies?
+        </div>
+        <div
+            class="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
+            <p>Persistence: Data stored in local storage and cookies can persist even after the user closes their
+                browser or turns off their computer since they are persistent storage solutions. Data stored in session
+                storage is only accessible during the user's browser session and is immediately deleted when the session
+                has ended because it is a temporary storage solution. <br>
+
+                Scope: A page from the same origin can only access data saved in Local Storage and Session Storage since
+                they are scoped to the origin. But, cookies are scoped to a certain domain or subdomain and are
+                accessible from any website on that domain. <br>
+
+                Size: Cookies don't have as much storage space as Local Storage and Session Storage. Depending on the
+                browser, Local Storage can save up to 5–10 MB of data, while Session Storage can hold the same amount of
+                data (5–10 MB). On the other hand, cookies only have a 4 KB maximum storage size. <br>
+
+                Transfer: When a request is made, Cookies are sent to the server, but Local Storage and Session Storage
+                are not. As a result, information stored in cookies may be utilized to retain state across requests, but
+                information stored in local storage and session storage is only accessible on the client side.
+            </p>
+        </div>
+    </div>
+
+
+    <div tabindex="0" class="collapse group mb-8">
+        <div
+            class="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content text-3xl">
+            What is event loop and how does it work?
+        </div>
+        <div
+            class="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
+            <p>Here is how the event loop operates: <br>
+                1. To begin, the JavaScript engine runs the script on the main thread before moving it up the call
+                stack. <br>
+
+                2. The code will be removed from the call stack and added to the task queue if it runs into an
+                asynchronous activity, such as a timer or a network request.<br>
+
+                3. The task queue and call stack are continually monitored by the event loop. The event loop will pull
+                the first job from the task queue and place it onto the call stack once the call stack is empty.<br>
+
+                4. Any more asynchronous operations are subsequently added to the task queue once the job's code has
+                been performed.<br>
+
+                5. Since this procedure keeps repeating, JavaScript can handle asynchronous activities while remaining
+                single-threaded.<br></p>
+        </div>
+    </div>
+
+
+    <div tabindex="0" class="collapse group mb-8">
+        <div
+            class="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content text-3xl">
+            Explain quizTimer() and chooseQuiz()?
+        </div>
+        <div
+            class="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
+            <p>
+                There is only one parameter for the function quizTimer, and that is dismiss. The purpose of this
+                function is to create a quiz countdown timer. The interval timer is reset and the countdown is over if
+                the function returns true. If not, it starts an interval timer and refreshes the timer display every
+                second. The interval timer function's code initially selects an HTML element with the id "count" before
+                figuring out how many minutes and seconds are left based on a variable called count. The minutes and
+                seconds are formatted with leading zeros as necessary before being shown within the designated HTML
+                element. If the count variable is more than 60, the code adds and removes CSS classes every two seconds
+                to change the color of the text displayed inside the HTML element. <br>
+
+                Index and GivenAns are the two arguments needed for the chooseQuiz function. The purpose of the function
+                is to save the user's response to a quiz question and modify the list of possible answers in line with
+                it. The code initially checks to see if the answer to the current quiz question has already been
+                recorded in the answers array using the Array.find method. If the answer already exists, it replaces the
+                old answer with the new one by traversing the answers array using a for...of loop and locating the
+                appropriate answer object using its id attribute. The function creates a new answer object by splitting
+                the quizData[index] object and adding the givenAns property if the answer does not already exist in the
+                answers array.The function uses the answers array as an input and calls displayAnswers after updating
+                the answers array. The objective of displayAnswers is to update the user interface to display the most
+                recent list of answers. In conclusion, using this code enables users to select and store answers to quiz
+                questions in an array. The function refreshes the previously saved response if the user modifies their
+                response.
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
